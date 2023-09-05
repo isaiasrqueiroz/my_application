@@ -38,4 +38,4 @@ const context = require.context('./', true, /\.spec\.ts$/);
 /**
  * Load the modules.
  */
-context.keys().map(context);
+context.keys().forEach(context);
