@@ -1,23 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SharedModule } from 'primeng/api';
-import { InputSwitchModule } from 'primeng/inputswitch';
 import { AppComponent } from './app.component';
-
-import { FormsModule } from '@angular/forms';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModule } from 'primeng/button';
-import { CheckboxModule } from 'primeng/checkbox';
-import { DropdownModule } from 'primeng/dropdown';
-import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
 
 //
 /**
@@ -30,20 +20,11 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, ThemeSwitchComponent],
+  declarations: [AppComponent, NotfoundComponent],
   imports: [
-    InputSwitchModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    InputTextModule,
-    CheckboxModule,
-    ButtonModule,
-    RadioButtonModule,
-    InputTextareaModule,
-    DropdownModule,
-    FormsModule,
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

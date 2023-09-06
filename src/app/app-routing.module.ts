@@ -1,10 +1,26 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { RouterModule } from '@angular/router';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          loadChildren: () =>
+            import('./components/auth/auth.module').then((m) => m.AuthModule),
+        },
+        { path: 'notfound', component: NotfoundComponent },
+        { path: '**', redirectTo: '/notfound' },
+      ],
+      {
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+        onSameUrlNavigation: 'reload',
+      }
+    ),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
