@@ -40,8 +40,4 @@ export class LoginComponent {
       console.error(error);
     }
   }
-
-  print() {
-    console.log(this.login);
-  }
 }

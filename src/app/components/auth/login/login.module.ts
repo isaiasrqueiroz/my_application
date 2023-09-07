@@ -13,7 +13,6 @@ import { InputTextModule } from 'primeng/inputtext';
     CommonModule,
     LoginRoutingModule,
     ButtonModule,
-    CheckboxModule,
     InputTextModule,
     FormsModule,
     PasswordModule,

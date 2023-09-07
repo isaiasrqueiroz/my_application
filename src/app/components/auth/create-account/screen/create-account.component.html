@@ -26,58 +26,57 @@
         class="w-full surface-card py-8 px-5 sm:px-8"
         style="border-radius: 53px"
       >
-        <div>
+        <div class="flex flex-column justify-content-center">
+          <label for="name" class="block text-900 text-xl font-medium mb-2"
+            >Name</label
+          >
+          <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            pInputText
+            class="w-full md:w-30rem mb-5"
+            style="padding: 1rem"
+            [(ngModel)]="account.name"
+            required
+          />
+
           <label for="email" class="block text-900 text-xl font-medium mb-2"
             >Email</label
           >
           <input
             id="email"
-            type="email"
+            type="text"
             placeholder="Email address"
             pInputText
             class="w-full md:w-30rem mb-5"
             style="padding: 1rem"
-            [(ngModel)]="login.email"
+            [(ngModel)]="account.email"
             required
           />
 
-          <label for="password" class="block text-900 font-medium text-xl mb-2"
+          <label for="password" class="block text-900 text-xl font-medium mb-2"
             >Password</label
           >
-          <p-password
+          <input
             id="password"
-            [(ngModel)]="login.password"
+            type="text"
             placeholder="Password"
-            [toggleMask]="true"
-            styleClass="mb-5"
-            inputStyleClass="w-full p-3 md:w-30rem"
+            pInputText
+            class="w-full md:w-30rem mb-5"
+            style="padding: 1rem"
+            [(ngModel)]="account.password"
             required
-          ></p-password>
+          />
 
-          <div
-            class="flex align-items-center justify-content-between mb-5 gap-5"
-          >
-            <a
-              class="font-medium no-underline ml-2 text-right cursor-pointer"
-              style="color: var(--primary-color)"
-              [routerLink]="['/access']"
-              >Forgot password?</a
-            >
-            <a
-              class="font-medium no-underline ml-2 text-right cursor-pointer"
-              style="color: var(--primary-color)"
-              [routerLink]="['/createaccount']"
-              >Sign out</a
-            >
-          </div>
           <button
             type="submit"
             pButton
             pRipple
-            label="Sign In"
+            label="Create"
             class="w-full p-3 text-xl"
             (click)="onSubmit()"
-            [disabled]="!login.email || !login.password"
+            [disabled]="!account.name || !account.email || !account.password"
             [routerLink]="['/']"
           ></button>
         </div>

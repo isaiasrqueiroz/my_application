@@ -18,6 +18,13 @@ import { HomeComponent } from 'src/app/layout/home/home.component';
           import('./login/login.module').then((m) => m.LoginModule),
       },
       {
+        path: 'createaccount',
+        loadChildren: () =>
+          import('./create-account/create-account.module').then(
+            (m) => m.CreateAccountModule
+          ),
+      },
+      {
         path: 'error',
         loadChildren: () =>
           import('./error/error.module').then((m) => m.ErrorModule),
